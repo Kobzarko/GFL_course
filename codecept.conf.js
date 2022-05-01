@@ -18,6 +18,9 @@ exports.config = {
       waitForNavigation: 'networkidle0',
       waitForTimeout: 10000,
       timeout: 10000,
+    },
+    ChaiWrapper : {
+      require: "codeceptjs-chai"
     }
   },
   include: {

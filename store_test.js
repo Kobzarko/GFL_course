@@ -9,11 +9,20 @@ let user = {
 
 Feature('Store');
 
-Scenario('Sign In', ({ I, homePage, authPage,createAccountPage,myAccountPage }) => {
+Before(({ I, homePage }) => {
     homePage.openStore();
+  });
+
+Scenario('Sign In', ({ I, homePage, authPage,createAccountPage,myAccountPage }) => {
+    // homePage.openStore();
     homePage.clickSignIn();
     authPage.fillNewUserEmail(Date.now() + '@test.com');
     authPage.clickCreateAccount();
     createAccountPage.fillNewUserForm(user);
     myAccountPage.verifyMyAccount();
+    pause();
 });
+
+After(({ I, homePage }) => {
+    homePage.clickSignOut();
+  });
