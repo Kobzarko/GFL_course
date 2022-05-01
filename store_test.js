@@ -16,5 +16,4 @@ Scenario('Sign In', ({ I, homePage, authPage,createAccountPage,myAccountPage }) 
     authPage.clickCreateAccount();
     createAccountPage.fillNewUserForm(user);
     myAccountPage.verifyMyAccount();
-    pause();
 });
