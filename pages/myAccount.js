@@ -2,7 +2,9 @@ const { I } = inject();
 
 module.exports = {
 
-  verifyMyAccount(){
-    I.see('My ACCOUNT');
-  }
+  verifyMyAccount() {
+    // I.see('MY ACCOUNT');
+    I.seeTitleEquals('My account - My Store');
+  },
+
 }
