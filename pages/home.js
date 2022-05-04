@@ -3,7 +3,7 @@ const { I } = inject();
 module.exports = {
   storeLink: 'https://automationpractice.com/index.php',
   signInButton: {css: 'a.login'},
-  signOutButton: {css: '.header_user_info>a'},
+  signOutButton: {css: 'a.logout'},
 
   openStore() {
     I.amOnPage(this.storeLink);
@@ -14,12 +14,8 @@ module.exports = {
   },
 
   clickSignOut(){
-    if(this.storeLink){
-      I.click(this.signOutButton);
-    } else {
-      I.amOnPage(this.storeLink);
-      I.click(this.signOutButton);
-    }
-    
+    I.waitForElement(this.signOutButton, 10);
+    I.click(this.signOutButton);
   }
+  
 }
