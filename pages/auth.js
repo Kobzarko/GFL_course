@@ -9,7 +9,7 @@ module.exports = {
   currentUserPassInput: {css: '#passwd'},
 
   waitForPageLoad(field) {
-    I.waitForVisible(field);
+    I.waitForVisible(field,5);
   },
   
   fillField(value,field) {
