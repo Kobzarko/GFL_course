@@ -5,6 +5,7 @@ module.exports = {
   lastNameInput: { css: '#customer_lastname' },
   stateSelect: { css: '#id_state' },
   postalCodeInput: { css: '#postcode' },
+  passInput: {css: '#passwd'},
 
   fillNewUserForm(user) {
     this.waitForPageLoad();
@@ -14,7 +15,7 @@ module.exports = {
     I.selectOption(this.stateSelect, user.state);
     I.fillField(this.postalCodeInput, user.postalCode);
     I.checkOption('#uniform-id_gender1');
-    I.fillField('#passwd','Temp123456!');
+    I.fillField(this.passInput, user.password);
     I.selectOption("#days", '5');
     I.selectOption('#months','7');
     I.selectOption('#years','2001');
