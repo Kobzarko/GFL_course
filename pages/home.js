@@ -10,6 +10,7 @@ module.exports = {
   },
 
   clickSignIn() {
+    I.waitForVisible(this.signInButton);
     I.click(this.signInButton);
   },
 

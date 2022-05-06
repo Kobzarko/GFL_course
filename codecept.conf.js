@@ -30,6 +30,7 @@ exports.config = {
     createAccountPage: './pages/createAccount.js',
     myAccountPage: './pages/myAccount.js',
     userData: './data/user.js',
+    productPage: './pages/product.js',
   },
   bootstrap: null,
   mocha: {},

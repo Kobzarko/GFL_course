@@ -7,12 +7,14 @@ module.exports = {
   emailInput: {css: 'input[name=email_create]'},
   currentUserEmailInput: {css: '#email'},
   currentUserPassInput: {css: '#passwd'},
+  SubmitLoginButton: {css:'#SubmitLogin'},
 
   waitForPageLoad(field) {
     I.waitForVisible(field,5);
   },
+
   
-  fillField(value,field) {
+  fillVisibleField(value,field) {
     this.waitForPageLoad(field);
     I.fillField(field, value);
   },
@@ -25,5 +27,22 @@ module.exports = {
     let email = await I.grabValueFrom(this.emailInput);
     return user.email = email;
   },
+
+  waitFieldsVisible(){
+    I.waitForVisible(this.currentUserEmailInput);
+    I.waitForVisible(this.currentUserPassInput);
+  },
+
+  loginUser(user,button){
+    this.waitFieldsVisible();
+    I.fillField(this.currentUserEmailInput, user.email);
+    I.fillField(this.currentUserPassInput, user.password);
+    this.clickButton(button);
+  },
+
+  clickButton(button){
+    I.waitForVisible(button);
+    I.click(button);
+  }
 
 }
